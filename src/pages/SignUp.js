@@ -12,6 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import './SignUp.css';
 
 function Copyright() {
   return (
@@ -32,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    height: '780px',
   },
   avatar: {
     margin: theme.spacing(1),
@@ -48,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignUp() {
   const classes = useStyles();
-
+  document.body.style = 'background: "#FFFFFF"';
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />

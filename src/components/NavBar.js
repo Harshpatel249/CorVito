@@ -20,6 +20,7 @@ import Brightness4Icon from '@material-ui/icons/Brightness4';
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
+    position: 'relative',
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -208,7 +209,7 @@ export default function NavBar(props) {
               </Badge>
             </IconButton>
             <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={0} color="secondary">
+              <Badge badgeContent={2} color="secondary">
                 <MailIcon />
               </Badge>
             </IconButton>
