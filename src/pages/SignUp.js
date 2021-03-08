@@ -3,8 +3,6 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
@@ -13,6 +11,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import './SignUp.css';
 import { NavLink, Link } from "react-router-dom";
+import FormControl from '@material-ui/core/FormControl';
+import FormHelperText from '@material-ui/core/FormHelperText';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -37,6 +37,23 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignUp(props) {
   const classes = useStyles();
+  const [Password, setPassword] = React.useState(null);
+  const [confPassword, setconfPassword] = React.useState(null);
+  const [isSame, setisSame] = React.useState(true);
+
+  function handlePasschange(event){
+    setPassword(event.target.value);
+  }
+
+  function handleConfirmchange(event){
+    setconfPassword(event.target.value);
+    if(Password == confPassword){
+      setisSame(true);
+    }else{
+      setisSame(false);
+    }
+  }
+
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -93,14 +110,28 @@ export default function SignUp(props) {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                onChange = {handlePasschange}
               />
             </Grid>
             <Grid item xs={12}>
-              <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I want to receive inspiration, marketing promotions and updates via email."
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                name="Confirmpassword"
+                label="Confirm Password"
+                type="password"
+                id="Confirmpassword"
+                autoComplete="current-password"
+                onChange = {handleConfirmchange}
               />
+              <FormControl error>
+              {
+                isSame?null:<FormHelperText id="Confirmpassword">Passwords do not match!</FormHelperText>
+              }
+              </FormControl>
             </Grid>
+           
           </Grid>
           <Button
             type="submit"

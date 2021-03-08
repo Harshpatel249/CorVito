@@ -24,9 +24,11 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
   },
   menuButton: {
+    marginTop: theme.spacing(0),
     marginRight: theme.spacing(2),
   },
   title: {
+    marginTop: theme.spacing(1),
     display: 'none',
     [theme.breakpoints.up('sm')]: {
       display: 'block',
@@ -39,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
+    marginTop: theme.spacing(1),
     marginRight: theme.spacing(2),
     marginLeft: 0,
     width: '100%',
@@ -46,6 +49,15 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: theme.spacing(3),
       width: 'auto',
     },
+  },
+  rightIcons: {
+   
+  },
+  toolbar: {
+    minHeight: 50,
+    alignItems: 'flex-start',
+    paddingTop: theme.spacing(1),
+    paddingBottom: theme.spacing(2),
   },
   searchIcon: {
     padding: theme.spacing(0, 2),
@@ -177,7 +189,7 @@ export default function NavBar(props) {
   return (
     <div className={classes.grow} >
       <AppBar position="static" style={{backgroundColor: props.Theme.navbar}}>
-        <Toolbar>
+        <Toolbar className={classes.toolbar}>
           <IconButton
             edge="start"
             className={classes.menuButton}
@@ -185,7 +197,7 @@ export default function NavBar(props) {
             aria-label="open drawer"
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton> 
           <NavLink to="/home" tag={Link} onClick={props.onHome} style={{color: props.Theme.navbarfont, textDecoration: 'none' }}>
           <Typography className={classes.title} variant="h6" noWrap>
             Corvito
@@ -206,23 +218,23 @@ export default function NavBar(props) {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-          <IconButton aria-label="ChangeTheme" color="inherit" onClick={handleSetTheme}>
+          <IconButton aria-label="ChangeTheme" color="inherit" onClick={handleSetTheme} className={classes.rightIcons}>
               <Badge badgeContent={0} color="secondary">
               {ThemeButton}
               </Badge>
             </IconButton>
             <NavLink to="/login" tag={Link} onClick={props.onLogin}>
-              <span><p style={{color: props.Theme.navbarfont }}> Login </p></span>
+              <span><p style={{color: props.Theme.navbarfont }} className={classes.rightIcons}> Login </p></span>
             </NavLink>
-            <IconButton aria-label="show 4 new mails" color="inherit">
+            <IconButton aria-label="show 4 new mails" color="inherit" className={classes.rightIcons}>
               <Badge badgeContent={0} color="secondary">
                 <MailIcon />
               </Badge>
             </IconButton>
             <NavLink to="/signup" tag={Link} onClick={props.onLogin}>
-              <span><p style={{color: props.Theme.navbarfont }}> SignUp </p></span>
+              <span><p style={{color: props.Theme.navbarfont }} className={classes.rightIcons}> SignUp </p></span>
             </NavLink>
-            <IconButton aria-label="show 17 new notifications" color="inherit">
+            <IconButton aria-label="show 17 new notifications" color="inherit" className={classes.rightIcons}>
               <Badge badgeContent={0} color="secondary">
                 <NotificationsIcon />
               </Badge>
@@ -234,6 +246,7 @@ export default function NavBar(props) {
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
               color="inherit"
+              className={classes.rightIcons}
             >
               <AccountCircle />
             </IconButton>
