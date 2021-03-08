@@ -386,14 +386,7 @@ export default function NavBar(props) {
       <div className={classes.grow} >
       <AppBar position="static" style={{backgroundColor: props.Theme.navbar}}>
         <Toolbar className={classes.toolbar}>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <MenuIcon />
-          </IconButton> 
+          
           <NavLink to="/home" tag={Link} onClick={props.onHome} style={{color: props.Theme.navbarfont, textDecoration: 'none' }}>
           <Typography className={classes.title} variant="h6" noWrap>
             Corvito
