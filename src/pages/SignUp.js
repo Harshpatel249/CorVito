@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    height: '910px',
+    height: '883px',
   },
   avatar: {
     margin: theme.spacing(1),
@@ -122,7 +122,7 @@ export default function SignUp(props) {
       </div>
       <Box mt={5}>
       <NavLink to="/home" tag={Link} onClick={props.onHome} style={{ textDecoration: 'none' }}>
-      <Typography align="center">CorVito</Typography>
+      <Typography variant="h4" align="center">CorVito</Typography>
       </NavLink>
       </Box>
     </Container>
