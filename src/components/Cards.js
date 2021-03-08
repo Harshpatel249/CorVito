@@ -7,15 +7,32 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import logo from '../assets/logo.png';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
+import { IconButton } from '@material-ui/core';
+import GradeIcon from '@material-ui/icons/Grade';
+import poster from '../assets/poster.jpg';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    maxWidth: 200,
   },
   media: {
-    height: 300,
+    height:200,
   },
+  space: {
+    
+    margin : 8,
+    marginTop: 0,
+    border: 0,
+    paddingTop:0,
+    paddingBottom:0,
+  },
+  typo: {
+    margin: 0,
+    border: 0,
+    padding :0,
+  },
+
 });
 
 export default function MediaCard() {
@@ -25,27 +42,26 @@ export default function MediaCard() {
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
-          className={classes.media}
-          image= {logo}
-          title="Contemplative Reptile"
+            className={classes.media}
+            image = {poster}
+            title = "poster"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+          <Typography className={classes.typo} gutterBottom variant="h12" component="h2">
+            Movie Name
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
+        <IconButton className={classes.space}>
+            <AddCircleIcon />
+        </IconButton>
+        <IconButton className={classes.space}>
+            <GradeIcon />
+        </IconButton>
+        <Typography className={classes.space}> 
+            8.0
+        </Typography>
       </CardActions>
     </Card>
   );
