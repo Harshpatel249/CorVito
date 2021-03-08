@@ -16,6 +16,11 @@ const [theme,setTheme] = React.useState(darkTheme);
 
 const [isLogin,setisLogin] = React.useState(false);
 const [isSignUp,setisSignUp] = React.useState(false);
+const [isLoggedIn, setisLoggedin] = React.useState(false);
+
+function toggleLogin(){
+  setisLoggedin(!isLoggedIn);
+}
 
 function routeHome(){
   setisLogin(false);
@@ -46,7 +51,7 @@ if(!(isLogin || isSignUp)){
      return(
     <div className="App" style={{backgroundColor: theme.body}}>
     <HashRouter basename="/">
-    <NavBar Theme={theme} onChange = {changeTheme} onLogin = {routeLogin} onSignup = {routeSignUp}/>
+    <NavBar Theme={theme} onChange = {changeTheme} onLogin = {routeLogin} onSignup = {routeSignUp} isLoggedin = {isLoggedIn}/>
         <Switch>
           <Route
             path="/home"
@@ -65,7 +70,7 @@ if(!(isLogin || isSignUp)){
         <Route
           path="/login"
           exact
-          render={() => <LogIn onSignUp = {routeSignUp} onHome = {routeHome}/>}
+          render={() => <LogIn onSignUp = {routeSignUp} onHome = {routeHome} onLoggedin = {toggleLogin}/>}
         />
         <Route
           path="/signup"

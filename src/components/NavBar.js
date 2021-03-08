@@ -53,6 +53,14 @@ const useStyles = makeStyles((theme) => ({
   rightIcons: {
    
   },
+  reglog: {
+    marginLeft: theme.spacing(0),
+    marginRight: theme.spacing(1),
+  },
+  regsign: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(0),
+  },
   toolbar: {
     minHeight: 50,
     alignItems: 'flex-start',
@@ -185,9 +193,86 @@ export default function NavBar(props) {
       </MenuItem>
     </Menu>
   );
-
-  return (
-    <div className={classes.grow} >
+  if(props.isLoggedin){
+    return(
+      <div className={classes.grow} >
+      <AppBar position="static" style={{backgroundColor: props.Theme.navbar}}>
+        <Toolbar className={classes.toolbar}>
+          <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="open drawer"
+          >
+            <MenuIcon />
+          </IconButton> 
+          <NavLink to="/home" tag={Link} onClick={props.onHome} style={{color: props.Theme.navbarfont, textDecoration: 'none' }}>
+          <Typography className={classes.title} variant="h6" noWrap>
+            Corvito
+          </Typography>
+          </NavLink>
+          <div className={classes.search}>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <InputBase
+              placeholder="Search…"
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+              inputProps={{ 'aria-label': 'search' }}
+            />
+          </div>
+          <div className={classes.grow} />
+          <div className={classes.sectionDesktop}>
+          <IconButton aria-label="ChangeTheme" color="inherit" onClick={handleSetTheme} className={classes.rightIcons}>
+              <Badge badgeContent={0} color="secondary">
+              {ThemeButton}
+              </Badge>
+            </IconButton>  
+            <IconButton aria-label="show 4 new mails" color="inherit" className={classes.rightIcons}>
+              <Badge badgeContent={0} color="secondary">
+                <MailIcon />
+              </Badge>
+            </IconButton>
+            <IconButton aria-label="show 17 new notifications" color="inherit" className={classes.rightIcons}>
+              <Badge badgeContent={0} color="secondary">
+                <NotificationsIcon />
+              </Badge>
+            </IconButton>
+            <IconButton
+              edge="end"
+              aria-label="account of current user"
+              aria-controls={menuId}
+              aria-haspopup="true"
+              onClick={handleProfileMenuOpen}
+              color="inherit"
+              className={classes.rightIcons}
+            >
+              <AccountCircle />
+            </IconButton>
+          </div>
+          <div className={classes.sectionMobile}>
+            <IconButton
+              aria-label="show more"
+              aria-controls={mobileMenuId}
+              aria-haspopup="true"
+              onClick={handleMobileMenuOpen}
+              color="inherit"
+            >
+              <MoreIcon />
+            </IconButton>
+          </div>
+        </Toolbar>
+      </AppBar>
+      {renderMobileMenu}
+      {renderMenu}
+    </div>
+    );
+  }else{
+    return(
+      <div className={classes.grow} >
       <AppBar position="static" style={{backgroundColor: props.Theme.navbar}}>
         <Toolbar className={classes.toolbar}>
           <IconButton
@@ -223,49 +308,19 @@ export default function NavBar(props) {
               {ThemeButton}
               </Badge>
             </IconButton>
+
             <NavLink to="/login" tag={Link} onClick={props.onLogin}>
-              <span><p style={{color: props.Theme.navbarfont }} className={classes.rightIcons}> Login </p></span>
+              <span><p style={{color: props.Theme.navbarfont }} className={classes.rightIcons} className={classes.reglog}> Login </p></span>
             </NavLink>
-            <IconButton aria-label="show 4 new mails" color="inherit" className={classes.rightIcons}>
-              <Badge badgeContent={0} color="secondary">
-                <MailIcon />
-              </Badge>
-            </IconButton>
+            
             <NavLink to="/signup" tag={Link} onClick={props.onLogin}>
-              <span><p style={{color: props.Theme.navbarfont }} className={classes.rightIcons}> SignUp </p></span>
+              <span><p style={{color: props.Theme.navbarfont }} className={classes.rightIcons} className={classes.regsign}> SignUp </p></span>
             </NavLink>
-            <IconButton aria-label="show 17 new notifications" color="inherit" className={classes.rightIcons}>
-              <Badge badgeContent={0} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-              className={classes.rightIcons}
-            >
-              <AccountCircle />
-            </IconButton>
-          </div>
-          <div className={classes.sectionMobile}>
-            <IconButton
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
           </div>
         </Toolbar>
       </AppBar>
-      {renderMobileMenu}
-      {renderMenu}
     </div>
-  );
+    );
+  }
+
 }
