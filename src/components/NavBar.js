@@ -54,10 +54,12 @@ const useStyles = makeStyles((theme) => ({
    
   },
   reglog: {
+    marginTop: theme.spacing(1.5),
     marginLeft: theme.spacing(0),
     marginRight: theme.spacing(1),
   },
   regsign: {
+    marginTop: theme.spacing(1.5),
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(0),
   },

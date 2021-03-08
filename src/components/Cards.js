@@ -5,7 +5,6 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import { IconButton } from '@material-ui/core';
@@ -15,12 +14,13 @@ import poster from '../assets/poster.jpg';
 const useStyles = makeStyles({
   root: {
     maxWidth: 200,
+    position: 'relative',
+    marginLeft: 0,
   },
   media: {
     height:200,
   },
   space: {
-    
     margin : 8,
     marginTop: 0,
     border: 0,
@@ -35,7 +35,7 @@ const useStyles = makeStyles({
 
 });
 
-export default function MediaCard() {
+export default function Cards(props) {
   const classes = useStyles();
 
   return (
@@ -47,7 +47,7 @@ export default function MediaCard() {
             title = "poster"
         />
         <CardContent>
-          <Typography className={classes.typo} gutterBottom variant="h12" component="h2">
+          <Typography className={classes.typo} gutterBottom variant="h12" component="h5">
             Movie Name
           </Typography>
         </CardContent>

@@ -1,13 +1,34 @@
 import React from 'react';
-import Cards from '../components/Cards';
+import Carous from '../containers/Carous';
 
 export default function Home(props){
     document.body.style = 'background:'+ props.Theme.body;
     return (
         <div>
-        <Cards />
-        <h1 style={{ color: props.Theme.text }}>Welcome to the home page!</h1>
-        <p style={{ color: props.Theme.text }}>Lorem ipsum dolor</p>
+        <div>
+        <div style={{height:50}}>
+        <h2 style={{color:props.Theme.text, textAlign:'left', marginLeft: 269}}>Top rated Movies</h2>
+        </div>
+        <div>
+        <Carous Theme={props.Theme}/>
+        </div>
+        </div>
+        <div>
+        <div style={{height:50}}>
+        <h2 style={{color:props.Theme.text, textAlign:'left', marginLeft: 269}}>Recommended rated Movies</h2>
+        </div>
+        <div>
+        <Carous Theme={props.Theme}/>
+        </div>
+        </div>
+        <div>
+        <div style={{height:50}}>
+        <h2 style={{color:props.Theme.text, textAlign:'left', marginLeft: 269}}>Most popular</h2>
+        </div>
+        <div>
+        <Carous Theme={props.Theme}/>
+        </div>
+        </div>
         </div>
     );
 }
