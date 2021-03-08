@@ -16,7 +16,7 @@ const [theme,setTheme] = React.useState(darkTheme);
 
 const [isLogin,setisLogin] = React.useState(false);
 const [isSignUp,setisSignUp] = React.useState(false);
-const [isLoggedIn, setisLoggedin] = React.useState(false);
+const [isLoggedIn, setisLoggedin] = React.useState(true);
 
 function toggleLogin(){
   setisLoggedin(!isLoggedIn);
