@@ -16,6 +16,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import Brightness5Icon from '@material-ui/icons/Brightness5';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
+import { NavLink, Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -93,7 +94,7 @@ export default function NavBar(props) {
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   const bl = props.Theme.bool;
 
-  const handleSetTheme = (event) => {
+  const handleSetTheme = () => {
     bl==="true"?setThemeButton(<Brightness5Icon />):setThemeButton(<Brightness4Icon />);
     {props.onChange()};
   };
@@ -185,9 +186,11 @@ export default function NavBar(props) {
           >
             <MenuIcon />
           </IconButton>
+          <NavLink to="/home" tag={Link} onClick={props.onHome} style={{color: props.Theme.navbarfont, textDecoration: 'none' }}>
           <Typography className={classes.title} variant="h6" noWrap>
             Corvito
           </Typography>
+          </NavLink>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
@@ -208,11 +211,17 @@ export default function NavBar(props) {
               {ThemeButton}
               </Badge>
             </IconButton>
+            <NavLink to="/login" tag={Link} onClick={props.onLogin}>
+              <span><p style={{color: props.Theme.navbarfont }}> Login </p></span>
+            </NavLink>
             <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={2} color="secondary">
+              <Badge badgeContent={0} color="secondary">
                 <MailIcon />
               </Badge>
             </IconButton>
+            <NavLink to="/signup" tag={Link} onClick={props.onLogin}>
+              <span><p style={{color: props.Theme.navbarfont }}> SignUp </p></span>
+            </NavLink>
             <IconButton aria-label="show 17 new notifications" color="inherit">
               <Badge badgeContent={0} color="secondary">
                 <NotificationsIcon />

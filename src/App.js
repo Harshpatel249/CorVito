@@ -11,8 +11,27 @@ import NavBar from "../src/components/NavBar";
 
 
 function App() {
-const[theme,setTheme] = React.useState(darkTheme);
-const x = true;
+const [theme,setTheme] = React.useState(darkTheme);
+
+
+const [isLogin,setisLogin] = React.useState(false);
+const [isSignUp,setisSignUp] = React.useState(false);
+
+function routeHome(){
+  setisLogin(false);
+  setisSignUp(false);
+  setTheme(darkTheme);
+}
+
+function routeLogin(){
+  setisLogin(true);
+  setTheme(lightTheme);
+}
+
+function routeSignUp(){
+  setisSignUp(true);
+  setTheme(lightTheme);
+}
 
 function changeTheme(){
   if(theme == lightTheme){
@@ -22,46 +41,43 @@ function changeTheme(){
   }
   
 }
-  return (
-    x?<div className="App" style={{backgroundColor: theme.body}}>
-    <NavBar Theme={theme} onChange = {changeTheme}/>
+ 
+if(!(isLogin || isSignUp)){
+     return(
+    <div className="App" style={{backgroundColor: theme.body}}>
     <HashRouter basename="/">
+    <NavBar Theme={theme} onChange = {changeTheme} onLogin = {routeLogin} onSignup = {routeSignUp}/>
         <Switch>
           <Route
             path="/home"
-            render={() => <Home Theme={theme} />}
-          />
-          <Route
-            path="/login"
             exact
-            component={LogIn}
-          />
-          <Route
-            path="/signup"
-            exact
-            component={SignUp}
+            render={() => <Home Theme={theme} onHome = {routeHome}/>}
           />
         </Switch>
       </HashRouter>
-  </div>:
-  <div className="App" style={{backgroundColor: theme.body}}>
+  </div>
+     );
+   }else{
+    return(
+  <div className="App" style={{backgroundColor: lightTheme.body}}>
   <HashRouter basename="/">
       <Switch>
         <Route
           path="/login"
           exact
-          component={LogIn}
+          render={() => <LogIn onSignUp = {routeSignUp} onHome = {routeHome}/>}
         />
         <Route
           path="/signup"
           exact
-          component={SignUp}
+          render={() => <SignUp onLogin = {routeLogin} onHome = {routeHome}/>}
         />
       </Switch>
     </HashRouter>
 </div>
-    
-  );
-}
+    );
+}    
+} 
+
 
 export default App;

@@ -1,3 +1,9 @@
 body{
     background-color: white;
 }
+p{
+    color: black;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
