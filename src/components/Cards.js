@@ -17,6 +17,12 @@ const useStyles = makeStyles({
     maxWidth: 200,
     position: 'relative',
     marginLeft: 0,
+    transition: "all 0.2s ease-in-out",
+    boxShadow: "0 5px 15px #b3b5ba",
+    "&:hover": {
+      boxShadow: "0 5px 15px #e2405f",
+      backgroundColor: "red",
+    },
   },
   media: {
     height:200,
@@ -33,7 +39,6 @@ const useStyles = makeStyles({
     border: 0,
     padding :0,
   },
-
 });
 
 export default function Cards(props) {
@@ -41,7 +46,7 @@ export default function Cards(props) {
 
   //Render Return
   return (
-    <Card className={classes.root} style={{backgroundColor: props.Theme.body, color: props.Theme.text, border: "2px solid", borderColor: props.Theme.text, borderRadius: "5px"}}>
+    <Card className={classes.root} style={{backgroundColor: props.Theme.body, color: props.Theme.text, border: "0.1px solid rgba(211, 211, 211, 0.397)", borderRadius: "5px"}}>
       <CardActionArea>
         <CardMedia
             className={classes.media}
