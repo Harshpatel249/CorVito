@@ -24,30 +24,30 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CardGrid() {
+export default function CardGrid(props) {
   const classes = useStyles();
 
   return (
     <Grid container className={classes.root}>
       <Grid item xs={12}>
         <Grid container justify="center">
-            <Grid item className = {classes.ite}>
-              <Cards />
+            <Grid item className = {classes.ite} >
+              <Cards Theme={props.Theme}/>
             </Grid>
-            <Grid item className = {classes.ite}>
-              <Cards />
+            <Grid item className = {classes.ite} >
+              <Cards Theme={props.Theme}/>
             </Grid>
-            <Grid item className = {classes.ite}>
-              <Cards />
+            <Grid item className = {classes.ite} >
+              <Cards Theme={props.Theme}/>
             </Grid>
-            <Grid item className = {classes.ite}>
-              <Cards />
+            <Grid item className = {classes.ite} >
+              <Cards Theme={props.Theme}/>
             </Grid>
-            <Grid item className = {classes.ite}>
-              <Cards />
+            <Grid item className = {classes.ite} >
+              <Cards Theme={props.Theme}/>
             </Grid>
-            <Grid item className = {classes.ite}>
-              <Cards />
+            <Grid item className = {classes.ite} >
+              <Cards Theme={props.Theme}/>
             </Grid>
         </Grid>
       </Grid>

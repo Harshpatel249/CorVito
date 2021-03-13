@@ -41,7 +41,7 @@ export default function Cards(props) {
 
   //Render Return
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} style={{backgroundColor: props.Theme.body, color: props.Theme.text, border: "2px solid", borderColor: props.Theme.text, borderRadius: "5px"}}>
       <CardActionArea>
         <CardMedia
             className={classes.media}
@@ -55,13 +55,13 @@ export default function Cards(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <IconButton className={classes.space}>
+        <IconButton className={classes.space} style={{color: props.Theme.text}}>
             <AddCircleIcon />
         </IconButton>
-        <IconButton className={classes.space}>
+        <IconButton className={classes.space} style={{color: props.Theme.text}}>
             <GradeIcon />
         </IconButton>
-        <Typography className={classes.space}> 
+        <Typography className={classes.space} style={{color: props.Theme.text}}> 
             8.0
         </Typography>
       </CardActions>
