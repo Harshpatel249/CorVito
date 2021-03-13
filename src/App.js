@@ -13,11 +13,13 @@ import NavBar from "../src/components/NavBar";
 function App() {
 const [theme,setTheme] = React.useState(darkTheme);
 
-
+//Use-State constants
 const [isLogin,setisLogin] = React.useState(false);
 const [isSignUp,setisSignUp] = React.useState(false);
 const [isLoggedIn, setisLoggedin] = React.useState(false);
 
+
+//Handling functions
 function toggleLogin(){
   setisLoggedin(!isLoggedIn);
 }
@@ -47,7 +49,8 @@ function changeTheme(){
   
 }
  
-if(!(isLogin || isSignUp)){
+//Render Return
+if(!(isLogin || isSignUp)){ //Route pages with nav-bar
      return(
     <div className="App" style={{backgroundColor: theme.body}}>
     <HashRouter basename="/">
@@ -63,7 +66,7 @@ if(!(isLogin || isSignUp)){
   </div>
      );
    }else{
-    return(
+    return( //Route pages without nav-bar
   <div className="App" style={{backgroundColor: lightTheme.body}}>
   <HashRouter basename="/">
       <Switch>

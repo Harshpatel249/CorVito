@@ -31,6 +31,7 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 
 const drawerWidth = 240;
 
+//StyleSheet
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
@@ -169,6 +170,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function NavBar(props) {
   const classes = useStyles();
+  //Use-state constants
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const [ThemeButton, setThemeButton] = React.useState(<Brightness5Icon />);
@@ -180,6 +182,7 @@ export default function NavBar(props) {
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   const bl = props.Theme.bool;
 
+  //Handling functions
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -266,6 +269,8 @@ export default function NavBar(props) {
       </MenuItem>
     </Menu>
   );
+
+  //Render Return
   if(props.isLoggedin){
     return(
       <div className={classes.grow} >

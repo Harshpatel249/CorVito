@@ -2,12 +2,13 @@ import React from "react";
 import Carousel from 'react-bootstrap/Carousel';
 import CardGrid from '../components/CardGrid';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './Carous.css';
 
 function Carous(props){
 
 return(  
-<Carousel>
-  <Carousel.Item interval={60000}>
+<Carousel style={{marginLeft: "0px", marginRight: "4.5%"}}>
+  <Carousel.Item interval={60000} style={{borderColor: props.Theme.text}}>
   
     <CardGrid
       className="d-block w-100"

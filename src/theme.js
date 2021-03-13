@@ -1,4 +1,4 @@
-export const lightTheme = {
+  export const lightTheme = {
     body: "#FFFFFF",
     text: "#000000",
     navbar: "#343a40",
@@ -6,6 +6,7 @@ export const lightTheme = {
     bool: "true", 
   };
   
+
   export const darkTheme = {
     body: "#1d2122",
     text: "#FFFFFF",

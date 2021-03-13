@@ -11,6 +11,7 @@ import { IconButton } from '@material-ui/core';
 import GradeIcon from '@material-ui/icons/Grade';
 import poster from '../assets/poster.jpg';
 
+//Stylesheet
 const useStyles = makeStyles({
   root: {
     maxWidth: 200,
@@ -38,6 +39,7 @@ const useStyles = makeStyles({
 export default function Cards(props) {
   const classes = useStyles();
 
+  //Render Return
   return (
     <Card className={classes.root}>
       <CardActionArea>
