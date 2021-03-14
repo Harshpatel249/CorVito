@@ -7,7 +7,7 @@ import SignUp from "../src/pages/SignUp";
 import Home from "../src/pages/Home";
 import {lightTheme, darkTheme} from "./theme";
 import NavBar from "../src/components/NavBar";
-
+import Profile from "../src/pages/Profile";
 
 
 function App() {
@@ -60,6 +60,11 @@ if(!(isLogin || isSignUp)){ //Route pages with nav-bar
             path="/home"
             exact
             render={() => <Home Theme={theme} onHome = {routeHome}/>}
+          />
+           <Route
+            path="/profile"
+            exact
+            render={() => <Profile Theme={theme}/>}
           />
         </Switch>
       </HashRouter>

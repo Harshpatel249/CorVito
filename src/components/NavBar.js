@@ -248,8 +248,10 @@ export default function NavBar(props) {
           paper: classes.menuPaper,
         }}
     >
-      <MenuItem onClick={handleMenuClose} className={classes.rightIcons} style={{backgroundColor: props.Theme.navbar, color: props.Theme.navbarfont, marginBottom: "5px"}}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose} className={classes.rightIcons} style={{backgroundColor: props.Theme.navbar, color: props.Theme.navbarfont}}>My account</MenuItem>
+      <NavLink to="/profile" tag={Link} style={{textDecoration: 'none'}}>
+      <MenuItem onClick={handleMenuClose} className={classes.rightIcons} style={{backgroundColor: props.Theme.navbar, color: props.Theme.navbarfont, marginBottom: "5px"}}>My Profile</MenuItem>
+      </NavLink>
+      <MenuItem onClick={handleMenuClose} className={classes.rightIcons} style={{backgroundColor: props.Theme.navbar, color: props.Theme.navbarfont}}>Sign Out</MenuItem>
 
     </Menu>
   );

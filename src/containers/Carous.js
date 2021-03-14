@@ -7,7 +7,7 @@ import './Carous.css';
 function Carous(props){
 
 return(  
-<Carousel style={{marginLeft: "0px", marginRight: "4.5%"}}>
+<Carousel style={{marginLeft: "0px", marginRight: "4.5%", overflow: "hidden", whiteSpace: "nowrap"}}>
   <Carousel.Item interval={60000} style={{borderColor: props.Theme.text}}>
   
     <CardGrid
