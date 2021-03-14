@@ -1,5 +1,6 @@
 import React from 'react';
 import Carous from '../containers/Carous';
+import './Home.css';
 
 export default function Home(props){
     document.body.style = 'background:'+ props.Theme.body;

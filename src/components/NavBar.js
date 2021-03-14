@@ -332,7 +332,7 @@ export default function NavBar(props) {
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
           <IconButton aria-label="ChangeTheme" color="inherit" onClick={handleSetTheme} className={classes.rightIcons}>
-              <Badge badgeContent={0} color="secondary">
+              <Badge badgeContent={0} color="secondary" title="Switch theme">
               {ThemeButton}
               </Badge>
             </IconButton>  
