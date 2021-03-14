@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     position: 'relative',
     marginLeft: 0,
     transition: "all 0.2s ease-in-out",
-    boxShadow: "0 5px 15px #b3b5ba",
+    
     "&:hover": {
       boxShadow: "0 5px 15px #e2405f",
     },
