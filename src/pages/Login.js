@@ -47,6 +47,11 @@ const useStyles = makeStyles((theme) => ({
 export default function LogIn(props) {
   const classes = useStyles();
 
+  function onLogin(){
+    props.onHome();
+    props.onLoggedin();
+  }
+
   function handleSubmit(){
     
   }
@@ -87,6 +92,7 @@ export default function LogIn(props) {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
+          <NavLink to="/home" tag={Link} onClick={onLogin}>
           <Button
             type="submit"
             fullWidth
@@ -96,6 +102,7 @@ export default function LogIn(props) {
           >
             Log In
           </Button>
+          </NavLink>
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">

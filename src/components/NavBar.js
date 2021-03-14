@@ -232,6 +232,7 @@ export default function NavBar(props) {
   const handleMenuClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
+    props.onSignOut();
   };
 
   const handleMobileMenuOpen = (event) => {
