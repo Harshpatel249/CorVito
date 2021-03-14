@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     padding: 100,
   },
   ite: {
-      marginLeft: "5em",
+      marginLeft: "4.2vw",
   },
 }));
 
