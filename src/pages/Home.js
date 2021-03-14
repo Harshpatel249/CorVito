@@ -8,7 +8,7 @@ export default function Home(props){
         <div>
         <div>
         <div style={{height:50}}>
-        <h2 style={{color:props.Theme.text, textAlign:'left', marginLeft: 220}}>Top rated Movies</h2>
+        <h2 style={{color:props.Theme.text}}>Top rated Movies</h2>
         </div>
         <div>
         <Carous Theme={props.Theme}/>
@@ -16,7 +16,7 @@ export default function Home(props){
         </div>
         <div>
         <div style={{height:50}}>
-        <h2 style={{color:props.Theme.text, textAlign:'left', marginLeft: 220}}>Recommended rated Movies</h2>
+        <h2 style={{color:props.Theme.text}}>Recommended rated Movies</h2>
         </div>
         <div>
         <Carous Theme={props.Theme}/>
@@ -24,7 +24,7 @@ export default function Home(props){
         </div>
         <div>
         <div style={{height:50}}>
-        <h2 style={{color:props.Theme.text, textAlign:'left', marginLeft: 220}}>Most popular</h2>
+        <h2 style={{color:props.Theme.text}}>Most popular</h2>
         </div>
         <div>
         <Carous Theme={props.Theme}/>
