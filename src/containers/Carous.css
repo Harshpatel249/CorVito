@@ -5,14 +5,14 @@
 .carousel-control-prev {         
     height: 50px;         
     width: 50px;          
-    margin-left: 120px;   
+    margin-left: 7em;   
 }      
     
 
 .carousel-control-next{         
     height: 50px;         
     width: 50px;           
-    margin-right: 60px;   
+    margin-right: 3em;   
 }      
 
 .carousel-control-prev-icon {          
