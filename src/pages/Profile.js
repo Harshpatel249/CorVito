@@ -5,6 +5,8 @@ import CreateIcon from '@material-ui/icons/Create';
 import SettingsIcon from '@material-ui/icons/Settings';
 import EqualizerIcon from '@material-ui/icons/Equalizer';
 import { NavLink, Link } from "react-router-dom";
+import './Profile.css';
+
 export default function Profile(props){
     document.body.style = 'background:'+ props.Theme.body;
     return (
@@ -37,7 +39,7 @@ export default function Profile(props){
             </div>
             <div>
                 <div style={{height:50}}>
-                    <h2 style={{color:props.Theme.text, textAlign:'left', marginLeft: 220}}>Watch List</h2>
+                    <h2 style={{color:props.Theme.text, textAlign:'left'}}>Watch List</h2>
                 </div>
                 <div>
                     <Carous Theme={props.Theme}/>
@@ -45,7 +47,7 @@ export default function Profile(props){
             </div>
             <div>
                 <div style={{height:50}}>
-                    <h2 style={{color:props.Theme.text, textAlign:'left', marginLeft: 220}}>Rated Movies</h2>
+                    <h2 style={{color:props.Theme.text, textAlign:'left'}}>Rated Movies</h2>
                 </div>
                 <div>
                     <Carous Theme={props.Theme}/>
@@ -53,7 +55,7 @@ export default function Profile(props){
             </div>
             <div>
                 <div style={{height:50}}>
-                    <h2 style={{color:props.Theme.text, textAlign:'left', marginLeft: 220}}>Recommendations</h2>
+                    <h2 style={{color:props.Theme.text, textAlign:'left'}}>Recommendations</h2>
                 </div>
                 <div>
                     <Carous Theme={props.Theme}/>
