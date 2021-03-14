@@ -15,7 +15,7 @@ export default function Profile(props){
                 display:"flex",
                 justifyContent:"space-around",
                 margin:"1px 0px",
-                backgroundColor:"#20B2AA",
+                backgroundColor: props.Theme.ourcyan,
                 height:"300px",
                 justifyContent:"center",
             }}>

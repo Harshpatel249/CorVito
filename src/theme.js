@@ -3,6 +3,7 @@
     text: "#000000",
     navbar: "#343a40",
     navbarfont: "#f5f5f5",
+    ourcyan: "#20B2AA",
     bool: "true", 
   };
   
@@ -12,5 +13,6 @@
     text: "#FFFFFF",
     navbar: "#343a40",
     navbarfont: "#f5f5f5",
+    ourcyan: "#20B2AA",
     bool: "false",
   };

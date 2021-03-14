@@ -16,7 +16,7 @@ const [theme,setTheme] = React.useState(darkTheme);
 //Use-State constants
 const [isLogin,setisLogin] = React.useState(false);
 const [isSignUp,setisSignUp] = React.useState(false);
-const [isLoggedIn, setisLoggedin] = React.useState(true);
+const [isLoggedIn, setisLoggedin] = React.useState(false);
 
 
 //Handling functions

@@ -65,8 +65,8 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    backgroundColor: "#343a40",
-    color: "#f5f5f5",
+    backgroundColor: "#20B2AA",
+    color: "#000000",
   },
   drawerHeader: {
     display: 'flex',
@@ -190,7 +190,7 @@ const useStyles = makeStyles((theme) => ({
   },
   menuPaper: {
     width: "120px",
-    backgroundColor: "#343a40",
+    backgroundColor: "#20B2AA",
   },
 }));
 
@@ -253,9 +253,9 @@ export default function NavBar(props) {
         }}
     >
       <NavLink to="/profile" tag={Link} style={{textDecoration: 'none'}}>
-      <MenuItem onClick={handleMenuClose} className={classes.rightIcons} style={{backgroundColor: props.Theme.navbar, color: props.Theme.navbarfont, marginBottom: "5px"}}>My Profile</MenuItem>
+      <MenuItem onClick={handleMenuClose} className={classes.rightIcons} style={{backgroundColor: props.Theme.ourcyan, color: props.Theme.navbarfont, marginBottom: "5px"}}>My Profile</MenuItem>
       </NavLink>
-      <MenuItem onClick={handleMenuClose} className={classes.rightIcons} style={{backgroundColor: props.Theme.navbar, color: props.Theme.navbarfont}}>Sign Out</MenuItem>
+      <MenuItem onClick={handleMenuClose} className={classes.rightIcons} style={{backgroundColor: props.Theme.ourcyan, color: props.Theme.navbarfont}}>Sign Out</MenuItem>
 
     </Menu>
   );
@@ -387,7 +387,7 @@ export default function NavBar(props) {
         }}
       >
         <div className={classes.drawerHeader} >
-          <IconButton className={classes.rightIcons} onClick={handleDrawerClose} style={{color: props.Theme.navbarfont}}>
+          <IconButton className={classes.rightIcons} onClick={handleDrawerClose} style={{color: "#000000"}}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </div>
@@ -395,8 +395,7 @@ export default function NavBar(props) {
         <List>
           {['Top Rated', 'Most Popular','Critically Acclaimed','Recommendations for me','My Watch List', 'My Ratings', ].map((text, index) => (
             <ListItem button key={text} className={classes.rightIcons}>
-
-              <ListItemText primary={text} />
+              <ListItemText primary={text}/>
             </ListItem>
           ))}
         </List>

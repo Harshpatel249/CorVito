@@ -52,11 +52,13 @@ export default function SignUp(props) {
 
   function handlePasschange(event){
     setPassword(event.target.value);
+   
   }
 
   function handleConfirmchange(event){
     setconfPassword(event.target.value);
-    if(Password == confPassword){
+    
+    if(Password === event.target.value){
       setisSame(true);
     }else{
       setisSame(false);
