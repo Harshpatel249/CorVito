@@ -28,7 +28,8 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
-
+import Avatar from '@material-ui/core/Avatar';
+import logo from '../assets/logo.png';
 
 const drawerWidth = 240;
 
@@ -113,6 +114,9 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: theme.spacing(3),
       width: 'auto',
     },
+  },
+  square: {
+  
   },
   rightIcons: {
     transition: "all 0.2s ease-in-out",
@@ -314,9 +318,8 @@ export default function NavBar(props) {
             <MenuIcon />
           </IconButton> 
           <NavLink to="/home" tag={Link} onClick={props.onHome} style={{color: props.Theme.navbarfont, textDecoration: 'none' }}>
-          <Typography className={classes.title, classes.rightIcons} variant="h6" noWrap style={{marginTop:"8px"}}>
-            Corvito
-          </Typography>
+          <Avatar variant="rounded" src={logo} className={classes.square,classes.rightIcons} style={{marginTop: "7px", marginLeft: "5px"}}>
+          </Avatar>
           </NavLink>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -416,10 +419,9 @@ export default function NavBar(props) {
       <AppBar position="static" style={{backgroundColor: props.Theme.navbar}}>
         <Toolbar className={classes.toolbar}>
           
-          <NavLink to="/home" tag={Link} onClick={props.onHome} style={{color: props.Theme.navbarfont, textDecoration: 'none' }}>
-          <Typography className={classes.title,classes.rightIcons} variant="h6" noWrap style={{marginTop:"8px"}}>
-            Corvito
-          </Typography>
+        <NavLink to="/home" tag={Link} onClick={props.onHome} style={{color: props.Theme.navbarfont, textDecoration: 'none' }}>
+          <Avatar variant="rounded" src={logo} className={classes.square,classes.rightIcons} style={{marginTop: "7px", marginLeft: "5px"}}>
+          </Avatar>
           </NavLink>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
