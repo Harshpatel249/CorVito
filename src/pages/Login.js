@@ -33,6 +33,15 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  glow: {
+    width: "150px",
+    borderRadius:"5px",
+    marginLeft:"30%",
+    transition: "all 0.2s ease-in-out",
+    "&:hover": {
+      boxShadow: "0 5px 15px #e2405f",
+    },
+  },
 }));
 
 export default function LogIn(props) {
@@ -103,7 +112,7 @@ export default function LogIn(props) {
       </div>
       <Box mt={8}>
       <NavLink to="/home" tag={Link} onClick={props.onHome} style={{ textDecoration: 'none' }}>
-      <Typography variant="h4" align="center">CorVito</Typography>
+      <Typography variant="h4" align="center" className={classes.glow}>CorVito</Typography>
       </NavLink>
       </Box>
     </Container>

@@ -29,6 +29,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 
+
 const drawerWidth = 240;
 
 //StyleSheet
@@ -63,7 +64,8 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    
+    backgroundColor: "#343a40",
+    color: "#f5f5f5",
   },
   drawerHeader: {
     display: 'flex',
@@ -113,17 +115,34 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   rightIcons: {
-   
+    transition: "all 0.2s ease-in-out",
+    "&:hover": {
+      boxShadow: "0 5px 15px #e2405f",
+    },
   },
   reglog: {
     marginTop: theme.spacing(1.5),
-    marginLeft: theme.spacing(0),
-    marginRight: theme.spacing(1),
+    marginLeft: theme.spacing(0.5),
+    marginRight: theme.spacing(1.5),
+    marginBottom: theme.spacing(0),
+    width: theme.spacing(7),
+    height: theme.spacing(3.5),
+    transition: "all 0.2s ease-in-out",
+    "&:hover": {
+      boxShadow: "0 5px 15px #e2405f",
+    },
   },
   regsign: {
     marginTop: theme.spacing(1.5),
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(0),
+    marginBottom: theme.spacing(0),
+    width: theme.spacing(7),
+    height: theme.spacing(3.5),
+    transition: "all 0.2s ease-in-out",
+    "&:hover": {
+      boxShadow: "0 5px 15px #e2405f",
+    },
   },
   toolbar: {
     minHeight: 50,
@@ -164,6 +183,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('md')]: {
       display: 'none',
     },
+  },
+  menuPaper: {
+    width: "120px",
+    backgroundColor: "#343a40",
   },
 }));
 
@@ -221,9 +244,12 @@ export default function NavBar(props) {
       transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       open={isMenuOpen}
       onClose={handleMenuClose}
+      classes={{
+          paper: classes.menuPaper,
+        }}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleMenuClose} className={classes.rightIcons} style={{backgroundColor: props.Theme.navbar, color: props.Theme.navbarfont, marginBottom: "5px"}}>Profile</MenuItem>
+      <MenuItem onClick={handleMenuClose} className={classes.rightIcons} style={{backgroundColor: props.Theme.navbar, color: props.Theme.navbarfont}}>My account</MenuItem>
 
     </Menu>
   );
@@ -278,7 +304,7 @@ export default function NavBar(props) {
         <Toolbar className={classes.toolbar}>
           <IconButton
             edge="start"
-            className={classes.menuButton}
+            className={classes.menuButton, classes.rightIcons}
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
@@ -286,7 +312,7 @@ export default function NavBar(props) {
             <MenuIcon />
           </IconButton> 
           <NavLink to="/home" tag={Link} onClick={props.onHome} style={{color: props.Theme.navbarfont, textDecoration: 'none' }}>
-          <Typography className={classes.title} variant="h6" noWrap>
+          <Typography className={classes.title, classes.rightIcons} variant="h6" noWrap style={{marginTop:"8px"}}>
             Corvito
           </Typography>
           </NavLink>
@@ -345,6 +371,7 @@ export default function NavBar(props) {
           </div>
         </Toolbar>
       </AppBar>
+      
       <Drawer
         className={classes.drawer}
         variant="persistent"
@@ -354,34 +381,29 @@ export default function NavBar(props) {
           paper: classes.drawerPaper,
         }}
       >
-        <div className={classes.drawerHeader}>
-          <IconButton onClick={handleDrawerClose}>
+        <div className={classes.drawerHeader} >
+          <IconButton className={classes.rightIcons} onClick={handleDrawerClose} style={{color: props.Theme.navbarfont}}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </div>
         <Divider />
         <List>
           {['Top Rated', 'Most Popular','Critically Acclaimed','Recommendations for me','My Watch List', 'My Ratings', ].map((text, index) => (
-            <ListItem button key={text}>
+            <ListItem button key={text} className={classes.rightIcons}>
 
               <ListItemText primary={text} />
             </ListItem>
           ))}
         </List>
         <Divider />
-        <List>
+        <List >
           {['Account', 'Help', 'About Us'].map((text, index) => (
-            <ListItem button key={text}>
+            <ListItem button key={text} className={classes.rightIcons}>
               <ListItemText primary={text} />
             </ListItem>
           ))}
         </List>
       </Drawer>
-      <main
-        className={clsx(classes.content, {
-          [classes.contentShift]: open,
-        })}
-      ></main>
       {renderMobileMenu}
       {renderMenu}
     </div>
@@ -393,7 +415,7 @@ export default function NavBar(props) {
         <Toolbar className={classes.toolbar}>
           
           <NavLink to="/home" tag={Link} onClick={props.onHome} style={{color: props.Theme.navbarfont, textDecoration: 'none' }}>
-          <Typography className={classes.title} variant="h6" noWrap>
+          <Typography className={classes.title,classes.rightIcons} variant="h6" noWrap style={{marginTop:"8px"}}>
             Corvito
           </Typography>
           </NavLink>
