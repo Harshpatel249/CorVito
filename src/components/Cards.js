@@ -76,7 +76,7 @@ export default function Cards(props) {
         />
         <CardContent>
         <NewTooltip title={props.Moviedet.MovieName} placement="top" className={classes.tooltip}>
-          <Typography className={classes.typo} gutterBottom variant="h12" component="h8" style={{textOverflow:"ellipsis", whiteSpace: "nowrap", overflow: "hidden"}}>
+          <Typography className={classes.typo} gutterBottom variant="h12" component="h6" style={{textOverflow:"ellipsis", whiteSpace: "nowrap", overflow: "hidden"}}>
             {props.Moviedet.MovieName}
           </Typography>
           </NewTooltip>

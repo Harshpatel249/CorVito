@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Cards from './Cards';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { Top20 } from '../assets/TopMovie';
+import { NavLink, Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -50,9 +51,11 @@ export default function CardGrid(props) {
               {
                 props.Moviedet.map((Movies,index) => {
                   return(
+                    <NavLink to={{pathname:"/moviedetail", userProps:{ind: Movies.key}}} tag={Link} style={{textDecoration: 'none'}}>
                     <Grid item className = {classes.Xla} >
                       <Cards Theme={props.Theme} Moviedet={Movies}/>
                     </Grid>
+                    </NavLink>
                   );
                 })
               }
@@ -68,9 +71,11 @@ export default function CardGrid(props) {
           {
                 props.Moviedet.map((Movies,index) => {
                   return(
+                    <NavLink to={{pathname:"/moviedetail", userProps:{ind: Movies.key}}} tag={Link} style={{textDecoration: 'none'}}>
                     <Grid item className = {classes.la} >
                       <Cards Theme={props.Theme} Moviedet={Movies}/>
                     </Grid>
+                    </NavLink>
                   );
                 })
               }
@@ -86,9 +91,11 @@ export default function CardGrid(props) {
              {
                 props.Moviedet.map((Movies,index) => {
                   return(
+                    <NavLink to={{pathname:"/moviedetail", userProps:{ind: Movies.key}}} tag={Link} style={{textDecoration: 'none'}}>
                     <Grid item className = {classes.Me} >
                       <Cards Theme={props.Theme} Moviedet={Movies}/>
                     </Grid>
+                    </NavLink>
                   );
                 })
               }
@@ -104,9 +111,11 @@ export default function CardGrid(props) {
               {
                 props.Moviedet.map((Movies,index) => {
                   return(
+                    <NavLink to={{pathname:"/moviedetail", userProps:{ind: Movies.key}}} tag={Link} style={{textDecoration: 'none'}}>
                     <Grid item className = {classes.Sm} >
                       <Cards Theme={props.Theme} Moviedet={Movies}/>
                     </Grid>
+                    </NavLink>
                   );
                 })
               } 
@@ -119,10 +128,11 @@ export default function CardGrid(props) {
       <Grid container className={classes.root}>
         <Grid item xs={12}>
           <Grid container justify="center">
+          <NavLink to={{pathname:"/moviedetail", userProps:{ind: props.Moviedet.key}}} tag={Link} style={{textDecoration: 'none'}}>
             <Grid item className = {classes.Els} >
                 <Cards Theme={props.Theme} Moviedet={props.Moviedet}/>
             </Grid>
-                  
+            </NavLink>   
           </Grid>
         </Grid>
       </Grid>
