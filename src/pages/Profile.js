@@ -112,13 +112,15 @@ export default function Profile(props){
                         color:"black",
                         marginTop:"100px",
                         marginLeft:"25px",
-                        }}>Kishan Paaji</h1>
+                        }}>Darshan Paaji</h1>
                         <div style={{padding:"0", marginLeft:"0"}}>
                         <IconButton onClick={handleClickOpen}><CreateIcon/></IconButton>
 
                         <IconButton><SettingsIcon/></IconButton>
                         <IconButton><EqualizerIcon/></IconButton>
                         </div>
+                        <Typography variant="h8">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </Typography>
                 </div>
             </div>
             <div>

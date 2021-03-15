@@ -232,6 +232,10 @@ export default function NavBar(props) {
     handleMobileMenuClose();
     props.onSignOut();
   };
+  const handleMenuClose2 = () => {
+    setAnchorEl(null);
+    handleMobileMenuClose();
+  };
 
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
@@ -260,7 +264,7 @@ export default function NavBar(props) {
         }}
     >
       <NavLink to="/profile" tag={Link} style={{textDecoration: 'none'}}>
-      <MenuItem onClick={handleMenuClose} className={classes.rightIcons} style={{backgroundColor: props.Theme.ourcyan, color: props.Theme.navbarfont, marginBottom: "5px"}}>My Profile</MenuItem>
+      <MenuItem onClick={handleMenuClose2} className={classes.rightIcons} style={{backgroundColor: props.Theme.ourcyan, color: props.Theme.navbarfont, marginBottom: "5px"}}>My Profile</MenuItem>
       </NavLink>
       <MenuItem onClick={handleMenuClose} className={classes.rightIcons} style={{backgroundColor: props.Theme.ourcyan, color: props.Theme.navbarfont}}>Sign Out</MenuItem>
 
