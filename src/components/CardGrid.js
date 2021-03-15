@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Cards from './Cards';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { Top20 } from '../assets/TopMovie';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,7 +48,7 @@ export default function CardGrid(props) {
         <Grid item xs={12}>
           <Grid container justify="center">
               <Grid item className = {classes.Xla} >
-                <Cards Theme={props.Theme}/>
+                <Cards Theme={props.Theme} Moviedet={Top20.Movie}/>
               </Grid>
               <Grid item className = {classes.Xla} >
                 <Cards Theme={props.Theme}/>
