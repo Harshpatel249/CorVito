@@ -9,5 +9,4 @@
 ## Pre-requisites
 
 1. Install latest version of Node.js
-2. Install following dependencies: "npm install @material-ui/core", "npm install react-bootstrap bootstrap"
 

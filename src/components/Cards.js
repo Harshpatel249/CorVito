@@ -83,12 +83,16 @@ export default function Cards(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
+      <Tooltip title="Add to watchlist" className={classes.tooltip}>
         <IconButton className={classes.space} style={{color: props.Theme.text}}>
             <AddCircleIcon />
         </IconButton>
+        </Tooltip>
+        <Tooltip title="Add rating" className={classes.tooltip}>
         <IconButton className={classes.space} style={{color: props.Theme.text}}>
             <GradeIcon />
         </IconButton>
+        </Tooltip>
         <Typography className={classes.space} style={{color: props.Theme.text}}> 
             {props.Moviedet.Rating}
         </Typography>

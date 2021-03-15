@@ -8,7 +8,7 @@ import Home from "../src/pages/Home";
 import {lightTheme, darkTheme} from "./theme";
 import NavBar from "../src/components/NavBar";
 import Profile from "../src/pages/Profile";
-
+import MovieDeet from "../src/pages/MovieDeet";
 
 function App() {
 const [theme,setTheme] = React.useState(darkTheme);
@@ -69,6 +69,11 @@ if(!(isLogin || isSignUp)){ //Route pages with nav-bar
             path="/profile"
             exact
             render={() => <Profile Theme={theme}/>}
+          />
+          <Route
+            path="/moviedetail"
+            exact
+            render={() => <MovieDeet Theme={theme}/>}
           />
         </Switch>
       </HashRouter>

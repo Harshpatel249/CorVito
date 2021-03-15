@@ -318,8 +318,8 @@ export default function NavBar(props) {
           >
             <MenuIcon />
           </IconButton> 
-          <NavLink to="/home" tag={Link} onClick={props.onHome} style={{color: props.Theme.navbarfont, textDecoration: 'none' }}>
-          <Avatar variant="rounded" src={logo} className={classes.square,classes.rightIcons} style={{marginTop: "7px", marginLeft: "5px"}}>
+          <NavLink to="/home" tag={Link} onClick={props.onHome} style={{color: props.Theme.navbarfont, textDecoration: 'none'}}>
+          <Avatar variant="rounded" src={logo} className={classes.rightIcons} style={{marginTop: "7px", marginLeft: "5px"}}>
           </Avatar>
           </NavLink>
           <div className={classes.search}>
