@@ -48,19 +48,19 @@ export default function CardGrid(props) {
         <Grid item xs={12}>
           <Grid container justify="center">
               <Grid item className = {classes.Xla} >
-                <Cards Theme={props.Theme} Moviedet={Top20.Movie}/>
+                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
               </Grid>
               <Grid item className = {classes.Xla} >
-                <Cards Theme={props.Theme}/>
+                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
               </Grid>
               <Grid item className = {classes.Xla} >
-                <Cards Theme={props.Theme}/>
+                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
               </Grid>
               <Grid item className = {classes.Xla} >
-                <Cards Theme={props.Theme}/>
+                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
               </Grid>
               <Grid item className = {classes.Xla} >
-                <Cards Theme={props.Theme}/>
+                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
               </Grid>
           </Grid>
         </Grid>
@@ -72,16 +72,16 @@ export default function CardGrid(props) {
         <Grid item xs={12}>
           <Grid container justify="center">
               <Grid item className = {classes.la} >
-                <Cards Theme={props.Theme}/>
+                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
               </Grid>
               <Grid item className = {classes.la} >
-                <Cards Theme={props.Theme}/>
+                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
               </Grid>
               <Grid item className = {classes.la} >
-                <Cards Theme={props.Theme}/>
+                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
               </Grid>
               <Grid item className = {classes.la} >
-                <Cards Theme={props.Theme}/>
+                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
               </Grid>
           </Grid>
         </Grid>
@@ -93,13 +93,13 @@ export default function CardGrid(props) {
         <Grid item xs={12}>
           <Grid container justify="center">
               <Grid item className = {classes.Me} >
-                <Cards Theme={props.Theme}/>
+                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
               </Grid>
               <Grid item className = {classes.Me} >
-                <Cards Theme={props.Theme}/>
+                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
               </Grid>
               <Grid item className = {classes.Me} >
-                <Cards Theme={props.Theme}/>
+                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
               </Grid>
           </Grid>
         </Grid>
@@ -111,10 +111,10 @@ export default function CardGrid(props) {
         <Grid item xs={12}>
           <Grid container justify="center">
               <Grid item className = {classes.Sm} >
-                <Cards Theme={props.Theme}/>
+                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
               </Grid>
               <Grid item className = {classes.Sm} >
-                <Cards Theme={props.Theme}/>
+                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
               </Grid>
           </Grid>
         </Grid>
@@ -126,7 +126,7 @@ export default function CardGrid(props) {
         <Grid item xs={12}>
           <Grid container justify="center">
               <Grid item className = {classes.Els} >
-                <Cards Theme={props.Theme}/>
+                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
               </Grid>
           </Grid>
         </Grid>
