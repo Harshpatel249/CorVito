@@ -39,7 +39,7 @@ export default function CardGrid(props) {
   const XL = useMediaQuery('(min-width:1700px)');
   const L = useMediaQuery('(min-width:1500px)');
   const M = useMediaQuery('(min-width:1000px)');
-  const S = useMediaQuery('(min-width:500px)');
+  const S = useMediaQuery('(min-width:700px)');
 
 
   if(XL){
@@ -47,21 +47,15 @@ export default function CardGrid(props) {
       <Grid container className={classes.root}>
         <Grid item xs={12}>
           <Grid container justify="center">
-              <Grid item className = {classes.Xla} >
-                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
-              </Grid>
-              <Grid item className = {classes.Xla} >
-                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
-              </Grid>
-              <Grid item className = {classes.Xla} >
-                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
-              </Grid>
-              <Grid item className = {classes.Xla} >
-                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
-              </Grid>
-              <Grid item className = {classes.Xla} >
-                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
-              </Grid>
+              {
+                props.Moviedet.map((Movies,index) => {
+                  return(
+                    <Grid item className = {classes.Xla} >
+                      <Cards Theme={props.Theme} Moviedet={Movies}/>
+                    </Grid>
+                  );
+                })
+              }
           </Grid>
         </Grid>
       </Grid>
@@ -71,18 +65,15 @@ export default function CardGrid(props) {
       <Grid container className={classes.root}>
         <Grid item xs={12}>
           <Grid container justify="center">
-              <Grid item className = {classes.la} >
-                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
-              </Grid>
-              <Grid item className = {classes.la} >
-                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
-              </Grid>
-              <Grid item className = {classes.la} >
-                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
-              </Grid>
-              <Grid item className = {classes.la} >
-                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
-              </Grid>
+          {
+                props.Moviedet.map((Movies,index) => {
+                  return(
+                    <Grid item className = {classes.la} >
+                      <Cards Theme={props.Theme} Moviedet={Movies}/>
+                    </Grid>
+                  );
+                })
+              }
           </Grid>
         </Grid>
       </Grid>
@@ -92,15 +83,15 @@ export default function CardGrid(props) {
       <Grid container className={classes.root}>
         <Grid item xs={12}>
           <Grid container justify="center">
-              <Grid item className = {classes.Me} >
-                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
-              </Grid>
-              <Grid item className = {classes.Me} >
-                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
-              </Grid>
-              <Grid item className = {classes.Me} >
-                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
-              </Grid>
+             {
+                props.Moviedet.map((Movies,index) => {
+                  return(
+                    <Grid item className = {classes.Me} >
+                      <Cards Theme={props.Theme} Moviedet={Movies}/>
+                    </Grid>
+                  );
+                })
+              }
           </Grid>
         </Grid>
       </Grid>
@@ -110,12 +101,15 @@ export default function CardGrid(props) {
       <Grid container className={classes.root}>
         <Grid item xs={12}>
           <Grid container justify="center">
-              <Grid item className = {classes.Sm} >
-                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
-              </Grid>
-              <Grid item className = {classes.Sm} >
-                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
-              </Grid>
+              {
+                props.Moviedet.map((Movies,index) => {
+                  return(
+                    <Grid item className = {classes.Sm} >
+                      <Cards Theme={props.Theme} Moviedet={Movies}/>
+                    </Grid>
+                  );
+                })
+              } 
           </Grid>
         </Grid>
       </Grid>
@@ -125,9 +119,10 @@ export default function CardGrid(props) {
       <Grid container className={classes.root}>
         <Grid item xs={12}>
           <Grid container justify="center">
-              <Grid item className = {classes.Els} >
-                <Cards Theme={props.Theme} Moviedet={Top20.Movies[0]}/>
-              </Grid>
+            <Grid item className = {classes.Els} >
+                <Cards Theme={props.Theme} Moviedet={props.Moviedet}/>
+            </Grid>
+                  
           </Grid>
         </Grid>
       </Grid>
