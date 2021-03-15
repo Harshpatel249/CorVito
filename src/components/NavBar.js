@@ -1,5 +1,5 @@
 import React from 'react';
-import { fade, makeStyles, useTheme} from '@material-ui/core/styles';
+import { fade, makeStyles, useTheme, withStyles} from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import AppBar from '@material-ui/core/AppBar';
@@ -237,6 +237,14 @@ export default function NavBar(props) {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
+  const MyTextField = withStyles({
+    root: {
+      '& .MuiInputBase-root': {
+        color: '#f5f5f5',
+      },
+    },
+  })(TextField);
+
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
     <Menu
@@ -333,7 +341,7 @@ export default function NavBar(props) {
                 style={{marginLeft:"40px", marginTop:"0px"}}
                 options={Top100.map((option) => option.title)}
                 renderInput={(params) => (
-                  <TextField {...params} margin="normal" variant="outlined" size="small" styles={{marginTop:"0px"}}/>
+                  <MyTextField {...params} margin="normal" variant="outlined" size="small" styles={{marginTop:"0px"}}/>
                 )}
                 />
               </div>
@@ -435,10 +443,10 @@ export default function NavBar(props) {
                 <Autocomplete
                 id="free-solo-demo"
                 freeSolo
-                style={{marginLeft:"40px", marginTop:"0px"}}
+                style={{marginLeft:"40px", marginTop:"0px", color: props.Theme.navbarfont}}
                 options={Top100.map((option) => option.title)}
                 renderInput={(params) => (
-                  <TextField {...params} margin="normal" variant="outlined" size="small" styles={{marginTop:"0px"}}/>
+                  <MyTextField {...params} margin="normal" variant="outlined" size="small" styles={{marginTop:"0px"}}/>
                 )}
                 />
               </div>
