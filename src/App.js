@@ -71,8 +71,7 @@ if(!(isLogin || isSignUp)){ //Route pages with nav-bar
             render={() => <Profile Theme={theme}/>}
           />
           <Route
-            path="/moviedetail"
-            exact
+            path="/moviedetail/"
             render={() => <MovieDeet Theme={theme}/>}
           />
         </Switch>

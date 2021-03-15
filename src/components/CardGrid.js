@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Cards from './Cards';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import { Top20 } from '../assets/TopMovie';
 import { NavLink, Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
@@ -51,7 +50,7 @@ export default function CardGrid(props) {
               {
                 props.Moviedet.map((Movies,index) => {
                   return(
-                    <NavLink to={{pathname:"/moviedetail", userProps:{ind: Movies.key}}} tag={Link} style={{textDecoration: 'none'}}>
+                    <NavLink to={{pathname:"/moviedetail/"+Movies.key, userProps:{ind: Movies.key}}} tag={Link} style={{textDecoration: 'none'}}>
                     <Grid item className = {classes.Xla} >
                       <Cards Theme={props.Theme} Moviedet={Movies}/>
                     </Grid>
