@@ -1,15 +1,11 @@
 import React from 'react';
-import clsx from 'clsx';
 import { fade, makeStyles, useTheme} from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import List from '@material-ui/core/List';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
-import InputBase from '@material-ui/core/InputBase';
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
@@ -25,11 +21,12 @@ import { NavLink, Link } from "react-router-dom";
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import Avatar from '@material-ui/core/Avatar';
 import logo from '../assets/logo.png';
+import Autocomplete from '@material-ui/lab/Autocomplete';
+import { Top100 } from '../assets/TopMovie';
+import TextField from '@material-ui/core/TextField';
 
 const drawerWidth = 240;
 
@@ -123,9 +120,10 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       boxShadow: "0 5px 15px #e2405f",
     },
+    marginTop: "10px",
   },
   reglog: {
-    marginTop: theme.spacing(1.5),
+    marginTop: "20px",
     marginLeft: theme.spacing(0.5),
     marginRight: theme.spacing(1.5),
     marginBottom: theme.spacing(0),
@@ -137,7 +135,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   regsign: {
-    marginTop: theme.spacing(1.5),
+    marginTop: "20px",
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(0),
     marginBottom: theme.spacing(0),
@@ -311,6 +309,7 @@ export default function NavBar(props) {
         <Toolbar className={classes.toolbar}>
           <IconButton
             edge="start"
+            styles={{marginTop:"0px"}}
             className={classes.menuButton, classes.rightIcons}
             color="inherit"
             aria-label="open drawer"
@@ -319,22 +318,27 @@ export default function NavBar(props) {
             <MenuIcon />
           </IconButton> 
           <NavLink to="/home" tag={Link} onClick={props.onHome} style={{color: props.Theme.navbarfont, textDecoration: 'none'}}>
-          <Avatar variant="rounded" src={logo} className={classes.rightIcons} style={{marginTop: "7px", marginLeft: "5px"}}>
+          <Avatar variant="rounded" src={logo} className={classes.rightIcons} style={{marginTop: "13px", marginLeft: "5px"}}>
           </Avatar>
           </NavLink>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
+          
+            <div style={{ width: 1000, height: 60, padding: 0, marginLeft: "500px", marginTop:"0px",}}>
+              <div className={classes.searchIcon}>
+               <SearchIcon />
+              </div>
+              <div style={{ width: 500, height: 60, padding: 0, marginLeft: "5px", marginTop:"0px"}}>
+                <Autocomplete
+                id="free-solo-demo"
+                freeSolo
+                style={{marginLeft:"40px", marginTop:"0px"}}
+                options={Top100.map((option) => option.title)}
+                renderInput={(params) => (
+                  <TextField {...params} margin="normal" variant="outlined" size="small" styles={{marginTop:"0px"}}/>
+                )}
+                />
+              </div>
             </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </div>
+        
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
           <IconButton aria-label="ChangeTheme" color="inherit" onClick={handleSetTheme} className={classes.rightIcons}>
@@ -420,22 +424,25 @@ export default function NavBar(props) {
         <Toolbar className={classes.toolbar}>
           
         <NavLink to="/home" tag={Link} onClick={props.onHome} style={{color: props.Theme.navbarfont, textDecoration: 'none' }}>
-          <Avatar variant="rounded" src={logo} className={classes.square,classes.rightIcons} style={{marginTop: "7px", marginLeft: "5px"}}>
+          <Avatar variant="rounded" src={logo} className={classes.square,classes.rightIcons} style={{marginTop: "13px", marginLeft: "5px"}}>
           </Avatar>
           </NavLink>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
+          <div style={{ width: 1000, height: 60, padding: 0, marginLeft: "500px", marginTop:"0px",}}>
+              <div className={classes.searchIcon}>
+               <SearchIcon />
+              </div>
+              <div style={{ width: 500, height: 60, padding: 0, marginLeft: "5px", marginTop:"0px"}}>
+                <Autocomplete
+                id="free-solo-demo"
+                freeSolo
+                style={{marginLeft:"40px", marginTop:"0px"}}
+                options={Top100.map((option) => option.title)}
+                renderInput={(params) => (
+                  <TextField {...params} margin="normal" variant="outlined" size="small" styles={{marginTop:"0px"}}/>
+                )}
+                />
+              </div>
             </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
           <IconButton aria-label="ChangeTheme" color="inherit" onClick={handleSetTheme} className={classes.rightIcons}>
@@ -445,11 +452,11 @@ export default function NavBar(props) {
             </IconButton>
 
             <NavLink to="/login" tag={Link} onClick={props.onLogin}>
-              <span><p style={{color: props.Theme.navbarfont }} className={classes.rightIcons} className={classes.reglog}> Login </p></span>
+              <span><p style={{color: props.Theme.navbarfont}} className={classes.rightIcons,classes.reglog}> Login </p></span>
             </NavLink>
             
             <NavLink to="/signup" tag={Link} onClick={props.onLogin}>
-              <span><p style={{color: props.Theme.navbarfont }} className={classes.rightIcons} className={classes.regsign}> SignUp </p></span>
+              <span><p style={{color: props.Theme.navbarfont }} className={classes.rightIcons,classes.regsign}> SignUp </p></span>
             </NavLink>
           </div>
         </Toolbar>
