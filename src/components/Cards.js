@@ -14,9 +14,7 @@ import poster from '../assets/poster.jpg';
 //Stylesheet
 const useStyles = makeStyles({
   root: {
-    width: '11.55em',
-    height: '22em',
-    maxWidth: '200em',
+    maxWidth: '200',
     position: 'relative',
     marginLeft: 0,
     transition: "all 0.2s ease-in-out",
@@ -26,11 +24,10 @@ const useStyles = makeStyles({
     },
   },
   media: {
-    height:"15em",
+    height:'250px',
   },
   space: {
-    margin : '0.15em',
-    fontSize:'1em',
+    margin : '10px',
     marginTop: 0,
     border: 0,
     paddingTop:0,
@@ -57,17 +54,17 @@ export default function Cards(props) {
             title = "poster"
         />
         <CardContent>
-          <Typography className={classes.typo} gutterBottom variant="h12" component="h5" style={{fontSize:'1em'}}>
+          <Typography className={classes.typo} gutterBottom variant="h12" component="h5">
             Movie Name
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
         <IconButton className={classes.space} style={{color: props.Theme.text}}>
-            <AddCircleIcon style={{fontSize: '1.5em'}}/>
+            <AddCircleIcon />
         </IconButton>
         <IconButton className={classes.space} style={{color: props.Theme.text}}>
-            <GradeIcon style={{fontSize: '1.5em'}}/>
+            <GradeIcon />
         </IconButton>
         <Typography className={classes.space} style={{color: props.Theme.text}}> 
             8.0

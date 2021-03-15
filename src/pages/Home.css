@@ -1,16 +1,4 @@
-
-@media (max-width: 1750px) and (min-width: 1500px) {
-    body {
-      font-size: 13px;
-    }
-  }
-  @media (max-width: 1500px) and (min-width: 1000px) {
-    body {
-      font-size: 10px;
-    }
-  }
-
-  h2 {
+h2 {
     text-align:left;
     margin-left: 10vw;
   }

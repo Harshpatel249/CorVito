@@ -1,12 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import FormLabel from '@material-ui/core/FormLabel';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import Radio from '@material-ui/core/Radio';
-import Paper from '@material-ui/core/Paper';
 import Cards from './Cards';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,38 +15,121 @@ const useStyles = makeStyles((theme) => ({
   control: {
     padding: 100,
   },
-  ite: {
-      marginLeft: "4.2vw",
+  Xla: {
+    marginLeft: "100px",
+  },
+  la: {
+    marginLeft: "90px",
+  },
+  Me: {
+    marginLeft: "80px",
+  },
+  Sm: {
+    marginLeft: "70px",
+  },
+  Els: {
+    marginLeft: "0px",
   },
 }));
 
 export default function CardGrid(props) {
   const classes = useStyles();
 
-  return (
-    <Grid container className={classes.root}>
-      <Grid item xs={12}>
-        <Grid container justify="center">
-            <Grid item className = {classes.ite} >
-              <Cards Theme={props.Theme}/>
-            </Grid>
-            <Grid item className = {classes.ite} >
-              <Cards Theme={props.Theme}/>
-            </Grid>
-            <Grid item className = {classes.ite} >
-              <Cards Theme={props.Theme}/>
-            </Grid>
-            <Grid item className = {classes.ite} >
-              <Cards Theme={props.Theme}/>
-            </Grid>
-            <Grid item className = {classes.ite} >
-              <Cards Theme={props.Theme}/>
-            </Grid>
-            <Grid item className = {classes.ite} >
-              <Cards Theme={props.Theme}/>
-            </Grid>
+  const XL = useMediaQuery('(min-width:1700px)');
+  const L = useMediaQuery('(min-width:1500px)');
+  const M = useMediaQuery('(min-width:1000px)');
+  const S = useMediaQuery('(min-width:500px)');
+
+
+  if(XL){
+    return (
+      <Grid container className={classes.root}>
+        <Grid item xs={12}>
+          <Grid container justify="center">
+              <Grid item className = {classes.Xla} >
+                <Cards Theme={props.Theme}/>
+              </Grid>
+              <Grid item className = {classes.Xla} >
+                <Cards Theme={props.Theme}/>
+              </Grid>
+              <Grid item className = {classes.Xla} >
+                <Cards Theme={props.Theme}/>
+              </Grid>
+              <Grid item className = {classes.Xla} >
+                <Cards Theme={props.Theme}/>
+              </Grid>
+              <Grid item className = {classes.Xla} >
+                <Cards Theme={props.Theme}/>
+              </Grid>
+          </Grid>
         </Grid>
       </Grid>
-    </Grid>
-  );
+    );
+  }else if(L){
+    return (
+      <Grid container className={classes.root}>
+        <Grid item xs={12}>
+          <Grid container justify="center">
+              <Grid item className = {classes.la} >
+                <Cards Theme={props.Theme}/>
+              </Grid>
+              <Grid item className = {classes.la} >
+                <Cards Theme={props.Theme}/>
+              </Grid>
+              <Grid item className = {classes.la} >
+                <Cards Theme={props.Theme}/>
+              </Grid>
+              <Grid item className = {classes.la} >
+                <Cards Theme={props.Theme}/>
+              </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+    );
+  }else if(M){
+    return (
+      <Grid container className={classes.root}>
+        <Grid item xs={12}>
+          <Grid container justify="center">
+              <Grid item className = {classes.Me} >
+                <Cards Theme={props.Theme}/>
+              </Grid>
+              <Grid item className = {classes.Me} >
+                <Cards Theme={props.Theme}/>
+              </Grid>
+              <Grid item className = {classes.Me} >
+                <Cards Theme={props.Theme}/>
+              </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+    );
+  }else if(S){
+    return (
+      <Grid container className={classes.root}>
+        <Grid item xs={12}>
+          <Grid container justify="center">
+              <Grid item className = {classes.Sm} >
+                <Cards Theme={props.Theme}/>
+              </Grid>
+              <Grid item className = {classes.Sm} >
+                <Cards Theme={props.Theme}/>
+              </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+    );
+  }else{
+    return (
+      <Grid container className={classes.root}>
+        <Grid item xs={12}>
+          <Grid container justify="center">
+              <Grid item className = {classes.Els} >
+                <Cards Theme={props.Theme}/>
+              </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+    );
+  }
 }
