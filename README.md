@@ -5,7 +5,7 @@
 3. Type the following commands to start the server:
 "npm install"
 "npm start"
-"npm i react-avatar-edit"
+`npm i react-avatar-edit`
 
 ## Pre-requisites
 
