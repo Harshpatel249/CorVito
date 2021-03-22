@@ -1,5 +1,5 @@
   export const lightTheme = {
-    body: "#FFFFFF",
+    body: "#f1faee",
     text: "#000000",
     navbar: "#343a40",
     navbarfont: "#f5f5f5",

@@ -13,7 +13,10 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     marginLeft: '150px',
     marginRight: '150px',
-    height: '300px'
+    height: '300px',
+    "&:hover": {
+      boxShadow: "0 5px 15px #e2405f",
+    },
   },
   details: {
     display: 'flex',

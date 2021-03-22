@@ -15,6 +15,8 @@ import Slide from '@material-ui/core/Slide';
 import SaveIcon from '@material-ui/icons/Save';
 import MyEditor from '../components/MyEditor';
 import TextField from '@material-ui/core/TextField';
+import { NavLink, Link } from "react-router-dom";
+
 const useStyles = makeStyles((theme) => ({
     root: {
         '& .MuiTextField-root': {
@@ -115,8 +117,9 @@ export default function Profile(props){
                         }}>Darshan Paaji</h1>
                         <div style={{padding:"0", marginLeft:"0"}}>
                         <IconButton onClick={handleClickOpen}><CreateIcon/></IconButton>
-
-                        <IconButton><SettingsIcon/></IconButton>
+                        <NavLink to="/settings" tag={Link} style={{textDecoration: 'none'}}>
+                            <IconButton><SettingsIcon/></IconButton>
+                        </NavLink>
                         <IconButton><EqualizerIcon/></IconButton>
                         </div>
                         <Typography variant="h8">Lorem ipsum dolor sit amet, consectetur adipiscing elit.

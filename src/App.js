@@ -10,6 +10,7 @@ import NavBar from "../src/components/NavBar";
 import Profile from "../src/pages/Profile";
 import MovieDeet from "../src/pages/MovieDeet";
 import Movielist from "./pages/MovieList";
+import Settings from "./pages/Settings";
 
 function App() {
 const [theme,setTheme] = React.useState(darkTheme);
@@ -78,6 +79,10 @@ if(!(isLogin || isSignUp)){ //Route pages with nav-bar
           <Route
             path="/list"
             render={() => <Movielist Theme={theme}/>}
+          />
+          <Route
+            path="/settings"
+            render={() => <Settings Theme={theme}/>}
           />
         </Switch>
       </HashRouter>

@@ -23,7 +23,7 @@ export default function MovieDeet(props){
             <Typography variant="h4" align="center" style={{color:props.Theme.text}} gutterBottom>
                     Genre : {Top20.Movies[location.userProps.ind].Genre}
             </Typography>
-            <div style={{backgroundColor:"#20b2aa", width:"100%", margin:"0"}} hspace="100">
+            <div style={{backgroundColor:"#f1faee", width:"100%", margin:"0"}} hspace="100">
                 <br/>
                 <br/>
                 <img className="imgN" src = {Top20.Movies[location.userProps.ind].Poster} align="left" hspace="30" height="500"/>
