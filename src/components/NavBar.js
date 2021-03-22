@@ -27,6 +27,7 @@ import logo from '../assets/logo.png';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { Top100 } from '../assets/TopMovie';
 import TextField from '@material-ui/core/TextField';
+import AddIcon from '@material-ui/icons/Add';
 
 const drawerWidth = 240;
 
@@ -353,6 +354,9 @@ export default function NavBar(props) {
         
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
+          <IconButton color="inherit" className={classes.rightIcons} style={{marginRight:"550px"}}>
+            <AddIcon />
+          </IconButton>
           <IconButton aria-label="ChangeTheme" color="inherit" onClick={handleSetTheme} className={classes.rightIcons}>
               <Badge badgeContent={0} color="secondary" title="Switch theme">
               {ThemeButton}
@@ -457,6 +461,9 @@ export default function NavBar(props) {
             </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
+          <IconButton color="inherit" className={classes.rightIcons} style={{marginRight:"590px"}}>
+            <AddIcon />
+          </IconButton>
           <IconButton aria-label="ChangeTheme" color="inherit" onClick={handleSetTheme} className={classes.rightIcons}>
               <Badge badgeContent={0} color="secondary">
               {ThemeButton}
