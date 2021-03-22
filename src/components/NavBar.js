@@ -270,7 +270,7 @@ export default function NavBar(props) {
         }}
     >
       <NavLink to="/profile" tag={Link} style={{textDecoration: 'none'}}>
-      <MenuItem onClick={handleMenuClose2} className={classes.rightIcons} style={{backgroundColor: props.Theme.ourcyan, color: props.Theme.navbarfont, marginBottom: "5px"}}>My Profile</MenuItem>
+        <MenuItem onClick={handleMenuClose2} className={classes.rightIcons} style={{backgroundColor: props.Theme.ourcyan, color: props.Theme.navbarfont, marginBottom: "5px"}}>My Profile</MenuItem>
       </NavLink>
       <MenuItem onClick={handleMenuClose} className={classes.rightIcons} style={{backgroundColor: props.Theme.ourcyan, color: props.Theme.navbarfont}}>Sign Out</MenuItem>
 
@@ -420,17 +420,21 @@ export default function NavBar(props) {
         <Divider />
         <List>
           {['Top Rated', 'Most Popular','Critically Acclaimed','Recommendations for me','My Watch List', 'My Ratings', ].map((text, index) => (
-            <ListItem button key={text} className={classes.rightIcons}>
-              <ListItemText primary={text}/>
-            </ListItem>
+            <NavLink to="/list" tag={Link} style={{color: props.Theme.navbarfont, textDecoration: 'none' }}>
+              <ListItem button key={text} className={classes.rightIcons}>
+                <ListItemText primary={text}/>
+             </ListItem>
+            </NavLink>
           ))}
         </List>
         <Divider />
         <List >
           {['Account', 'Help', 'About Us'].map((text, index) => (
-            <ListItem button key={text} className={classes.rightIcons}>
-              <ListItemText primary={text} />
-            </ListItem>
+            <NavLink to="/profile" tag={Link} style={{color: props.Theme.navbarfont, textDecoration: 'none' }}>
+              <ListItem button key={text} className={classes.rightIcons}>
+                <ListItemText primary={text} />
+              </ListItem>
+            </NavLink>
           ))}
         </List>
       </Drawer>
