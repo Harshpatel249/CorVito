@@ -238,6 +238,11 @@ export default function NavBar(props) {
     handleMobileMenuClose();
   };
 
+  const handleMenuClose3 = () => {
+    setAnchorEl(null);
+    handleMobileMenuClose();
+  };
+
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
@@ -259,7 +264,7 @@ export default function NavBar(props) {
       keepMounted
       transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       open={isMenuOpen}
-      onClose={handleMenuClose}
+      onClose={handleMenuClose3}
       classes={{
           paper: classes.menuPaper,
         }}
