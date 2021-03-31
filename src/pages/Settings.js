@@ -48,7 +48,7 @@ export default function Settings(props){
         setOpen(false);
       };
     return (
-        <div>
+        <div style={{backgroundColor: props.Theme.body, color: props.Theme.text}}>
             <Snackbar
                 open={open}
                 onClose={handleClose}
@@ -60,7 +60,8 @@ export default function Settings(props){
                 display:"flex",
                 justifyContent:"space-around",
                 margin:"1px 0px",
-                backgroundColor:"#20B2AA",
+                backgroundColor: props.Theme.cc,
+                color: props.Theme.ct,
                 height:"200px",
                 justifyContent:"center",
             }}>
@@ -69,7 +70,6 @@ export default function Settings(props){
                 </div>   
             </div>
             <div style={{
-                backgroundColor:"#f1faee",
                 height:"300px",
                 marginTop:"100px"
             }}>
@@ -94,7 +94,6 @@ export default function Settings(props){
                 </div>
             </div>
             <div style={{
-                backgroundColor:"#f1faee",
                 height:"400px",
                 paddingTop:"0",
                 marginTop:"0",

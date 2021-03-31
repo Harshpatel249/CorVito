@@ -28,6 +28,7 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import { Top100 } from '../assets/TopMovie';
 import TextField from '@material-ui/core/TextField';
 import AddIcon from '@material-ui/icons/Add';
+import Tooltip from '@material-ui/core/Tooltip';
 
 const drawerWidth = 240;
 
@@ -63,8 +64,8 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    backgroundColor: "#20B2AA",
-    color: "#000000",
+    backgroundColor: "#000000",
+    color: "#ffffff",
   },
   drawerHeader: {
     display: 'flex',
@@ -119,7 +120,7 @@ const useStyles = makeStyles((theme) => ({
   rightIcons: {
     transition: "all 0.2s ease-in-out",
     "&:hover": {
-      boxShadow: "0 5px 15px #e2405f",
+      boxShadow: "0 5px 15px #61a5c2",
     },
     marginTop: "10px",
   },
@@ -132,7 +133,7 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(3.5),
     transition: "all 0.2s ease-in-out",
     "&:hover": {
-      boxShadow: "0 5px 15px #e2405f",
+      boxShadow: "0 5px 15px #61a5c2",
     },
   },
   regsign: {
@@ -144,7 +145,7 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(3.5),
     transition: "all 0.2s ease-in-out",
     "&:hover": {
-      boxShadow: "0 5px 15px #e2405f",
+      boxShadow: "0 5px 15px #61a5c2",
     },
   },
   toolbar: {
@@ -189,7 +190,7 @@ const useStyles = makeStyles((theme) => ({
   },
   menuPaper: {
     width: "120px",
-    backgroundColor: "#20B2AA",
+    backgroundColor: "#000000",
   },
 }));
 
@@ -270,9 +271,9 @@ export default function NavBar(props) {
         }}
     >
       <NavLink to="/profile" tag={Link} style={{textDecoration: 'none'}}>
-        <MenuItem onClick={handleMenuClose2} className={classes.rightIcons} style={{backgroundColor: props.Theme.ourcyan, color: props.Theme.navbarfont, marginBottom: "5px"}}>My Profile</MenuItem>
+        <MenuItem onClick={handleMenuClose2} className={classes.rightIcons} style={{backgroundColor: props.Theme.cc, color: props.Theme.ct, marginBottom: "5px"}}>My Profile</MenuItem>
       </NavLink>
-      <MenuItem onClick={handleMenuClose} className={classes.rightIcons} style={{backgroundColor: props.Theme.ourcyan, color: props.Theme.navbarfont}}>Sign Out</MenuItem>
+      <MenuItem onClick={handleMenuClose} className={classes.rightIcons} style={{backgroundColor: props.Theme.cc, color: props.Theme.ct}}>Sign Out</MenuItem>
 
     </Menu>
   );
@@ -362,11 +363,13 @@ export default function NavBar(props) {
           <IconButton color="inherit" className={classes.rightIcons} style={{marginRight:"550px"}}>
             <AddIcon />
           </IconButton>
+          <Tooltip title="Switch Theme" className={classes.tooltip}>
           <IconButton aria-label="ChangeTheme" color="inherit" onClick={handleSetTheme} className={classes.rightIcons}>
               <Badge badgeContent={0} color="secondary" title="Switch theme">
               {ThemeButton}
               </Badge>
             </IconButton>  
+            </Tooltip>
             <IconButton aria-label="show 4 new mails" color="inherit" className={classes.rightIcons}>
               <Badge badgeContent={0} color="secondary">
                 <MailIcon />
@@ -413,7 +416,7 @@ export default function NavBar(props) {
         }}
       >
         <div className={classes.drawerHeader} >
-          <IconButton className={classes.rightIcons} onClick={handleDrawerClose} style={{color: "#000000"}}>
+          <IconButton className={classes.rightIcons} onClick={handleDrawerClose} style={{color: "#ffffff"}}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </div>
@@ -473,12 +476,13 @@ export default function NavBar(props) {
           <IconButton color="inherit" className={classes.rightIcons} style={{marginRight:"590px"}}>
             <AddIcon />
           </IconButton>
+          <Tooltip title="Switch Theme" className={classes.tooltip}> 
           <IconButton aria-label="ChangeTheme" color="inherit" onClick={handleSetTheme} className={classes.rightIcons}>
               <Badge badgeContent={0} color="secondary">
               {ThemeButton}
               </Badge>
             </IconButton>
-
+          </Tooltip>
             <NavLink to="/login" tag={Link} onClick={props.onLogin}>
               <span><p style={{color: props.Theme.navbarfont}} className={classes.rightIcons,classes.reglog}> Login </p></span>
             </NavLink>

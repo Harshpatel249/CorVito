@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: '150px',
     height: '300px',
     "&:hover": {
-      boxShadow: "0 5px 15px #e2405f",
+      boxShadow: "0 5px 15px #61a5c2",
     },
   },
   details: {
@@ -60,7 +60,7 @@ export default function MediaControlCard(props) {
   }))(Tooltip);
 
   return (
-    <Card className={classes.root} style={{color: props.Theme.body, backgroundColor: props.Theme.text}}>
+    <Card className={classes.root} style={{color: props.Theme.ct, backgroundColor: props.Theme.cc}}>
         <CardMedia
         className={classes.cover}
         image={props.Moviedet.Poster}
@@ -71,7 +71,7 @@ export default function MediaControlCard(props) {
           <Typography component="h5" variant="h5">
             {props.Moviedet.MovieName}
           </Typography>
-          <Typography variant="subtitle1" color="textSecondary" style={{color: props.Theme.body}}>
+          <Typography variant="subtitle1" color="textSecondary" style={{color: props.Theme.ct}}>
             Release: {props.Moviedet.Release_date}
           </Typography>
           <Box component="fieldset" mb={3} borderColor="transparent" align="left" marginLeft="50px">

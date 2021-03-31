@@ -22,7 +22,7 @@ const useStyles = makeStyles({
     transition: "all 0.2s ease-in-out",
     
     "&:hover": {
-      boxShadow: "0 5px 15px #e2405f",
+      boxShadow: "0 5px 15px #61a5c2",
     },
   },
   media: {
@@ -67,7 +67,7 @@ export default function Cards(props) {
   
   //Render Return
   return (
-    <Card className={classes.root} style={{backgroundColor: props.Theme.body, color: props.Theme.text, border: "0.1px solid rgba(211, 211, 211, 0.397)", borderRadius: "5px"}}>
+    <Card className={classes.root} style={{backgroundColor: props.Theme.cc, color: props.Theme.ct, border: "0.1px solid rgba(211, 211, 211, 0.397)", borderRadius: "5px"}}>
       <CardActionArea>
         <CardMedia
             className={classes.media}
@@ -84,16 +84,16 @@ export default function Cards(props) {
       </CardActionArea>
       <CardActions>
       <Tooltip title="Add to watchlist" className={classes.tooltip}>
-        <IconButton className={classes.space} style={{color: props.Theme.text}}>
+        <IconButton className={classes.space} style={{color: props.Theme.ct}}>
             <AddCircleIcon />
         </IconButton>
         </Tooltip>
         <Tooltip title="Add rating" className={classes.tooltip}>
-        <IconButton className={classes.space} style={{color: props.Theme.text}}>
+        <IconButton className={classes.space} style={{color: props.Theme.ct}}>
             <GradeIcon />
         </IconButton>
         </Tooltip>
-        <Typography className={classes.space} style={{color: props.Theme.text}}> 
+        <Typography className={classes.space} style={{color: props.Theme.ct}}> 
             {props.Moviedet.Rating}
         </Typography>
       </CardActions>

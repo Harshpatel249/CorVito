@@ -27,6 +27,11 @@ const useStyles = makeStyles((theme) => ({
     appBar: {
       position: 'relative',
     },
+    feed:{
+        "&:hover": {
+            boxShadow: "0 5px 15px #61a5c2",
+          },
+    },
     title: {
       marginLeft: theme.spacing(2),
       flex: 1,
@@ -67,7 +72,7 @@ export default function Profile(props){
                 </Toolbar>
                 </AppBar>
                 <div style={{
-                    backgroundColor:"#20B2AA",
+                    backgroundColor:props.Theme.body,
                     height:"100%", 
                     width:"100%", 
                     justifyContent:"center"}}>
@@ -100,7 +105,8 @@ export default function Profile(props){
                 display:"flex",
                 justifyContent:"space-around",
                 margin:"1px 0px",
-                backgroundColor:"#20B2AA",
+                backgroundColor: props.Theme.cc,
+                color: props.Theme.ct,
                 height:"300px",
                 justifyContent:"center",
             }}>
@@ -111,16 +117,15 @@ export default function Profile(props){
                 </div>
                 <div>
                     <h1 style={{
-                        color:"black",
                         marginTop:"100px",
                         marginLeft:"25px",
                         }}>Darshan Paaji</h1>
                         <div style={{padding:"0", marginLeft:"0"}}>
-                        <IconButton onClick={handleClickOpen}><CreateIcon/></IconButton>
+                        <IconButton className={classes.feed} onClick={handleClickOpen} style={{color: props.Theme.ct}}><CreateIcon/></IconButton>
                         <NavLink to="/settings" tag={Link} style={{textDecoration: 'none'}}>
-                            <IconButton><SettingsIcon/></IconButton>
+                            <IconButton className={classes.feed} style={{color: props.Theme.ct}}><SettingsIcon/></IconButton>
                         </NavLink>
-                        <IconButton><EqualizerIcon/></IconButton>
+                        <IconButton className={classes.feed} style={{color: props.Theme.ct}}><EqualizerIcon/></IconButton>
                         </div>
                         <Typography variant="h8">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         </Typography>
