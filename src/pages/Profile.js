@@ -119,7 +119,7 @@ export default function Profile(props){
                     <h1 style={{
                         marginTop:"100px",
                         marginLeft:"25px",
-                        }}>Darshan Paaji</h1>
+                        }}>Laura Hugh</h1>
                         <div style={{padding:"0", marginLeft:"0"}}>
                         <IconButton className={classes.feed} onClick={handleClickOpen} style={{color: props.Theme.ct}}><CreateIcon/></IconButton>
                         <NavLink to="/settings" tag={Link} style={{textDecoration: 'none'}}>

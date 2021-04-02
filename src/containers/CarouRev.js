@@ -30,7 +30,7 @@ return(
         <Avatar style={{textAlign:'left', marginLeft: 220}} alt="Remy Sharp" src="/static/images/avatar/1.jpg" className={classes.large} />
         <Rating name="read-only" defaultValue={10} max={10} readOnly />
     </Box>
-    <h6 align="left" style={{color:props.Theme.text,textAlign:'left', marginLeft: 220}}> Easily the best movie i've ever seen. My wife kept talking to babysitter on phone. On the way back home, I had to explain her the entire movie. My anger was beyond hell's limit. I could feel the burning flame in my brain. I did what i had to do. If God never wanted me to cut-off the tongue and rape her, Then he wouldn't have given me the thought. Plot Twist: I'm suffering from excessive loneliness and hallucinations. There is no wife, no theatre and no babysitter. But then who did i kill? wait, Was there even a movie? </h6>
+    <h6 align="left" style={{color:props.Theme.text,textAlign:'left', marginLeft: 220}}> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </h6>
     <div style={{height: 50}}></div>
     
   </Carousel.Item>
@@ -42,7 +42,7 @@ return(
         <Avatar style={{textAlign:'left', marginLeft: 220}} alt="Remy Sharp" src="/static/images/avatar/1.jpg" className={classes.large} />
         <Rating name="read-only" defaultValue={8} max={10} readOnly />
     </Box>
-    <h6 align="left" style={{color:props.Theme.text,textAlign:'left', marginLeft: 220}}> Bruh! I literally shat my pants. Best Movie i've ever seen. Scorsese wilin' in '76 </h6>
+    <h6 align="left" style={{color:props.Theme.text,textAlign:'left', marginLeft: 220}}> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </h6>
     <div style={{height: 50}}></div>
 
   </Carousel.Item>
@@ -54,7 +54,7 @@ return(
         <Avatar style={{textAlign:'left', marginLeft: 220}} alt="Remy Sharp" src="/static/images/avatar/1.jpg" className={classes.large} />
         <Rating name="read-only" defaultValue={2} max={10} readOnly />
     </Box>
-    <h6 align="left" style={{color:props.Theme.text,textAlign:'left', marginLeft: 220}}> E bhaai! Hindi ma dub kem nathi bhai picture? kashi khabar na padi khaali randio ane khun kharaba hata aakha picture ma saheb. </h6>
+    <h6 align="left" style={{color:props.Theme.text,textAlign:'left', marginLeft: 220}}>  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </h6>
     <div style={{height: 50}}></div>
   </Carousel.Item>
 </Carousel>

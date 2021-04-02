@@ -8,6 +8,8 @@ import TextField from '@material-ui/core/TextField';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
+import FormControl from '@material-ui/core/FormControl';
+import FormHelperText from '@material-ui/core/FormHelperText';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -39,6 +41,7 @@ export default function Settings(props){
         checkedB: true,
         checkedC:true,
       });
+
     const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
     setTransition(() => 'TransitionUp');
@@ -47,6 +50,26 @@ export default function Settings(props){
     const handleClose = () => {
         setOpen(false);
       };
+
+    const [Password, setPassword] = React.useState(null);
+    const [confPassword, setconfPassword] = React.useState(null);
+    const [isSame, setisSame] = React.useState(true);
+
+    function handlePasschange(event){
+        setPassword(event.target.value);
+       
+      }
+    
+    function handleConfirmchange(event){
+        setconfPassword(event.target.value);
+        
+        if(Password === event.target.value){
+          setisSame(true);
+        }else{
+          setisSame(false);
+        }
+    }
+
     return (
         <div style={{backgroundColor: props.Theme.body, color: props.Theme.text}}>
             <Snackbar
@@ -78,19 +101,26 @@ export default function Settings(props){
                 </div>
                 <div style={{float:'center', paddingTop:"100px"}}>
                     <TextField
-                    id="password-input"
+                    id="password"
                     label="Password"
                     type="password"
                     autoComplete="current-password"
+                    onChange = {handlePasschange}
                     />
                 </div>
                 <div style={{float:'center'}}>
                     <TextField
-                    id="password-input"
+                    id="Confirmpassword"
                     label="Confirm Password"
                     type="password"
                     autoComplete="current-password"
+                    onChange = {handleConfirmchange}
                     />
+                    <FormControl error>
+                    {
+                        isSame?null:<FormHelperText id="Confirmpassword">Passwords do not match!</FormHelperText>
+                    }
+                    </FormControl>
                 </div>
             </div>
             <div style={{

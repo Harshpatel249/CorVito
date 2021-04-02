@@ -57,7 +57,7 @@ export default function MovieDeet(props){
                 <br/>
                 <Box component="fieldset" mb={3} borderColor="transparent" align="left" marginLeft="50px">
                     <Typography variant="h6" component="legend">Rate:</Typography>
-                    <Rating name="customized-10" defaultValue={0} max={10} />
+                    <Rating name="customized-10" defaultValue={0} max={10} style={{backgroundColor: "#e0e0e0", paddingTop: "6px", borderRadius: "3px"}}/>
                     <Button variant="contained" backgroundColor={props.Theme.navbar} style={{marginBottom: "15px", marginLeft: "115px"}}>Add to WatchList</Button>
                 </Box>
             </div>
