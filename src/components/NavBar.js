@@ -360,9 +360,11 @@ export default function NavBar(props) {
         
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
+          <Tooltip title="Add filters" className={classes.tooltip}>
           <IconButton color="inherit" className={classes.rightIcons} style={{marginRight:"550px"}}>
             <AddIcon />
           </IconButton>
+          </Tooltip>
           <Tooltip title="Switch Theme" className={classes.tooltip}>
           <IconButton aria-label="ChangeTheme" color="inherit" onClick={handleSetTheme} className={classes.rightIcons}>
               <Badge badgeContent={0} color="secondary" title="Switch theme">
@@ -473,9 +475,11 @@ export default function NavBar(props) {
             </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
+          <Tooltip title="Add filters" className={classes.tooltip}>
           <IconButton color="inherit" className={classes.rightIcons} style={{marginRight:"590px"}}>
             <AddIcon />
           </IconButton>
+          </Tooltip>
           <Tooltip title="Switch Theme" className={classes.tooltip}> 
           <IconButton aria-label="ChangeTheme" color="inherit" onClick={handleSetTheme} className={classes.rightIcons}>
               <Badge badgeContent={0} color="secondary">
